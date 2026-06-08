@@ -1,15 +1,15 @@
 # Contribution [#]: [Issue Title]
 
 **Contribution Number:** [1 / 2 / 3]  
-**Student:** [Your Name]  
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Student:** Ryan Garfinkel  
+**Issue:** [https://github.com/documentdb/functional-tests/issues/210](https://github.com/documentdb/functional-tests/issues/210)  
+**Status:** Phase I Complete
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+I chose this issue because it aligns with my intrest in ensuring some reliability with components in code. This helps ground sytsem behavior and can indicate any regression as new bug fixes or features are added. While the $tsIncrement operator seems simple, writing test cases will push me to think about edge cases and what it means to use this operator. I'm hoping to get a better understanding of test driven development working with new testing frameworks and mocking data to simulate parts of runtime.
 
 ---
 
