@@ -49,7 +49,7 @@ I initally needed to setup an environment to install all required packages. I cr
 ### Reproduction Evidence
 
 - **Commit showing reproduction:** [Link to the branch on my fork](https://github.com/RyanGarfinkel/functional-tests/tree/add-tsIncrement-compatibility-tests)
-- **Screenshots/logs:** [If applicable]
+- **Screenshots/logs:** ![Photo of terminal output when running tests.](inital-pytest-results.png)
 - **My findings:** I found that there was only one smoke test covering the $tsIncrement operator that tests basic functionality.
 
 ---
