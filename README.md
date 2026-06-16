@@ -3,7 +3,7 @@
 **Contribution Number:** 1  
 **Student:** Ryan Garfinkel  
 **Issue:** [https://github.com/documentdb/functional-tests/issues/210](https://github.com/documentdb/functional-tests/issues/210)  
-**Status:** Phase I Complete
+**Status:** Phase II Complete
 
 ---
 
@@ -17,19 +17,19 @@ I chose this issue because it aligns with my intrest in ensuring some reliabilit
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+There is currently only one test that covers the $tsIncrement operator, which tests for basic functionality. There are no tests for edge cases.
 
 ### Expected Behavior
 
-[What should happen?]
+There should be more tests for the $tsIncrement operator that extensively cover its behavior and its handeling of edge cases, type errors, and null values.
 
 ### Current Behavior
 
-[What actually happens?]
+At the moment, the one smoke test runs and passes as expected.
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+The only affected operator is the $tsIncrement operator. Resolving this issue will invole adding more tests to in the documentdb_tests/compatibility/tests/core/operator/expressions/timestamp/tsIncrement directory. 
 
 ---
 
@@ -37,19 +37,20 @@ I chose this issue because it aligns with my intrest in ensuring some reliabilit
 
 ### Environment Setup
 
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+I initally needed to setup an environment to install all required packages. I created the environment using python venv using python 3.11.1.
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Create virtual environment with `python3 -m venv .venv`
+2. Activate environment with `source .venv/bin/activate` (different command on windows)
+3. Install python requirements with `pip install -r requirements.txt`
+4. Run existing $tsIncrement operator tests with `python -m pytest documentdb_tests/compatibility/tests/core/operator/expressions/timestamp/tsIncrement/ --collect-only`
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** [Link to commit in your fork]
+- **Commit showing reproduction:** [Link to the branch on my fork](https://github.com/RyanGarfinkel/functional-tests/tree/add-tsIncrement-compatibility-tests)
 - **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **My findings:** I found that there was only one smoke test covering the $tsIncrement operator that tests basic functionality.
 
 ---
 
@@ -67,20 +68,26 @@ I chose this issue because it aligns with my intrest in ensuring some reliabilit
 
 Using UMPIRE framework (adapted):
 
-**Understand:** [Restate the problem]
+**Understand:** The $tsIncrement operator currently has one test that covers basic funcationity with only one timestamp. It needs additional tests to cover more complex functionality and possible errors like missing vales or invalid data types.
 
-**Match:** [What similar patterns/solutions exist in the codebase?]
+**Match:** There are similar expression related tests that are similar to the $tsIncrement operator, and other tests check for null/missing values and invalid data types.
 
 **Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
+1. Create a tsIncrement base class in the utils folder.
+2. Create tests for null values.
+3. Create tests for invalud data types.
+4. Add additional tests in expressions that utilize the tsIncrement operator.
 
-**Implement:** [Link to your branch/commits as you work]
+**Implement:** [Link to the branch on my fork](https://github.com/RyanGarfinkel/functional-tests/tree/add-tsIncrement-compatibility-tests)
 
-**Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
+**Review:** 
+- [ ] All tests have docstrings to convey their purpose.
+- [ ] Any constants are imported from test_constants.py.
+- [ ] Each test makes only one assertion.
+- [ ] Any shared dataclasses live in `utils/` directory.
+- [ ] Any new filenames follow the test_tsIncrement_{feature}.py name style.
 
-**Evaluate:** [How will you verify it works?]
+**Evaluate:** In addition to there being a complete suite of tests that pass, the additional compatability tests can run on a live MongoDB database.
 
 ---
 
