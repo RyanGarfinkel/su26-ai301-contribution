@@ -114,13 +114,13 @@ When setting up my environment with MonogDb through Docker, I had to manually te
 
 ### Week 1 Progress
 
-This week, I added tests that involded null types, missing fields, and type mismatch errors. I added 21 test cases and they all passed while running MongoDB (through seperate docker container) in the background. I also had to add a specific, tsincrement error code in the framework list (shared between tests). Additionally, I added a compatbility test to ensure the tsIncrement operator works within match/filter and expression operations.
+This week, I added tests that involded null types, missing fields, and type mismatch errors. I added 21 test cases and they all passed while running MongoDB (through seperate docker container) in the background. I also had to add a specific, tsincrement error code in the framework list (shared between tests). Additionally, I added a compatbility test to ensure the tsIncrement operator works within match/filter, expression, and group operations.
 
 ### Code Changes
 
 - **Files modified:** test_tsIncrement.py, error_codes.py, test_match_with_expr.py, test_group_expr_operators.py
-- **Key commits:** [2nd pass & error code](https://github.com/RyanGarfinkel/functional-tests/commit/f22989d21df7a111b73a54ebf092bcb168527bd3), [Wiring test with $match](https://github.com/RyanGarfinkel/functional-tests/commit/aa3f02c0077ac643724ef0cf48283e9f5a5ee699)
-- **Approach decisions:** [Why you chose certain approaches]
+- **Key commits:** [2nd pass & error code](https://github.com/RyanGarfinkel/functional-tests/commit/f22989d21df7a111b73a54ebf092bcb168527bd3), [Wiring test with $match](https://github.com/RyanGarfinkel/functional-tests/commit/aa3f02c0077ac643724ef0cf48283e9f5a5ee699), [Group compatability tests](https://github.com/RyanGarfinkel/functional-tests/commit/6b76a59e32ca83035b36a219f6b09383e41bfee8)
+- **Approach decisions:** I target individual (unit) tests on just the tsIncrement operator, but also needed to test how it worked when used with other operators.
 
 ---
 
