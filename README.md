@@ -3,7 +3,7 @@
 **Contribution Number:** 1  
 **Student:** Ryan Garfinkel  
 **Issue:** [https://github.com/documentdb/functional-tests/issues/210](https://github.com/documentdb/functional-tests/issues/210)  
-**Status:** Phase II Complete
+**Status:** Phase III Complete
 
 ---
 
@@ -106,24 +106,20 @@ Using UMPIRE framework (adapted):
 
 ### Manual Testing
 
-[What you tested manually and results]
+When setting up my environment with MonogDb through Docker, I had to manually test if the connection was live.
 
 ---
 
 ## Implementation Notes
 
-### Week [X] Progress
+### Week 1 Progress
 
-[What you built this week, challenges faced, decisions made]
-
-### Week [Y] Progress
-
-[Continue documenting as you work]
+This week, I added tests that involded null types, missing fields, and type mismatch errors. I added 21 test cases and they all passed while running MongoDB (through seperate docker container) in the background. I also had to add a specific, tsincrement error code in the framework list (shared between tests). Additionally, I added a compatbility test to ensure the tsIncrement operator works within match/filter and expression operations.
 
 ### Code Changes
 
-- **Files modified:** [List]
-- **Key commits:** [Links to important commits]
+- **Files modified:** test_tsIncrement.py, error_codes.py, test_match_with_expr.py, test_group_expr_operators.py
+- **Key commits:** [2nd pass & error code](https://github.com/RyanGarfinkel/functional-tests/commit/f22989d21df7a111b73a54ebf092bcb168527bd3), [Wiring test with $match](https://github.com/RyanGarfinkel/functional-tests/commit/aa3f02c0077ac643724ef0cf48283e9f5a5ee699)
 - **Approach decisions:** [Why you chose certain approaches]
 
 ---
@@ -150,7 +146,8 @@ Using UMPIRE framework (adapted):
 
 ### Challenges Overcome
 
-[What was hard and how you solved it]
+- Initally understanding the repository structure and code styles took some time to understand. I ran the /init command with Claude code then asked repository specific questions, asking for quotes and file paths for me to verify.
+- Running the tests initially was a challenge, because I needed to setup a MongoDB instance seperately. I ended up having a seperate MongoDB docker container running in the background when I needed to test my changes.
 
 ### What I'd Do Differently Next Time
 
