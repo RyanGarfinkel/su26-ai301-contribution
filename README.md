@@ -3,7 +3,7 @@
 **Contribution Number:** 1  
 **Student:** Ryan Garfinkel  
 **Issue:** [https://github.com/documentdb/functional-tests/issues/210](https://github.com/documentdb/functional-tests/issues/210)  
-**Status:** Phase III Complete
+**Status:** Phase IV Complete
 
 ---
 
@@ -122,19 +122,23 @@ This week, I added tests that involded null types, missing fields, and type mism
 - **Key commits:** [2nd pass & error code](https://github.com/RyanGarfinkel/functional-tests/commit/f22989d21df7a111b73a54ebf092bcb168527bd3), [Wiring test with $match](https://github.com/RyanGarfinkel/functional-tests/commit/aa3f02c0077ac643724ef0cf48283e9f5a5ee699), [Group compatability tests](https://github.com/RyanGarfinkel/functional-tests/commit/6b76a59e32ca83035b36a219f6b09383e41bfee8)
 - **Approach decisions:** I target individual (unit) tests on just the tsIncrement operator, but also needed to test how it worked when used with other operators.
 
+### Week 1 Progress
+
+This week, I created the PR to merge my working branch into the main repository's branch. This was more difficult becuase I realized I forgot to add a signoff on my previous 3 commits. I had to rebase my branch and add the signoff. I then had to update my branch with new changes from main, but I was able to fix it. I am now awaiting feedback from a codeowner or maintainer. In the meantime, I will start looking for new issues I can tackle but regulary check in.
+
 ---
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when submitted]
+**PR Link:** [functional-tests/pull/654](https://github.com/documentdb/functional-tests/pull/654)
 
-**PR Description:** [Draft or final PR description - much of the content above can be adapted]
+**PR Description:** This PR required me to add additional test coverage to the $tsIncrement operator. Initially, this operator only had one smoke test, which tested basic functionality, not including null/missing input and invalid types. A new error code was added for testing with MongoDB.
 
 **Maintainer Feedback:**
 - [Date]: [Summary of feedback received]
 - [Date]: [How you addressed it]
 
-**Status:** [Awaiting review / Iterating / Approved / Merged]
+**Status:** Awaiting review
 
 ---
 
