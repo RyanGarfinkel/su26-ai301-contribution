@@ -266,14 +266,13 @@ Using UMPIRE framework (adapted):
 
 ### Unit Tests
 
-- [ ] Test case 1: [Description]
-- [ ] Test case 2: [Description]
-- [ ] Test case 3: [Description]
+- [x] Test case 1: CRUD operations on the encryption feature for insert, update, delete. Also tested for missing, plaintext values. (CRUD)
+- [x] Test case 2: Filters and pipelines on Queryable Encryption collection. (query)
+- [x] Test case 3: Tested for large values, nested encrypted paths, and on multiple documents. (edge cases)
 
 ### Integration Tests
 
-- [ ] Integration scenario 1
-- [ ] Integration scenario 2
+- [x] Integration scenario 1: Created shared fixture with collection anme, field specs, and keyId shared across unit tests, rather than redefining it in each unit test.
 
 ### Manual Testing
 
@@ -285,15 +284,15 @@ When setting up my environment with MonogDB through Docker, I had to manually te
 
 ### Week 1 Progress
 
-[TODO]
+This week, I committed code that implements the second pass test cases for the encryption feature. I covered CRUD operations, edge cases, and the query call. I had to create a new pytest fixture that each of these tests share. I committed these changes, but still need to review these changes to ensure cose style meets contributing requirements. When tested, each added test passes. After review, I'll be able to open the PR.
 
 ### Code Changes
 
-- **Files modified:** 
-- **Key commits:**
-- **Approach decisions:**
+- **Files modified:** `encryption/conftest`, `encryption/test_encryption_crud.py`, `encryption/test_encryption_edge_cases.py`, `encryption/test_encryption_query.py`, `encryption/utils/qe_collections.py`.
+- **Key commits:** [commit](https://github.com/RyanGarfinkel/functional-tests/commit/78ce0251bd985945094d6e6b8b563d290defdb1f)
+- **Approach decisions:** The code style and file structure for the added tests were inspired yb the compactStructuredEncrypionData tests and fsyncUnlock tests. These two features showed how/where fixtures were made and had a similar style test suite I needed to create for the encryption feature.
 
-### Week 1 Progress
+### Week 2 Progress
 
 
 ---
