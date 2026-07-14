@@ -174,7 +174,7 @@
 **Contribution Number:** 2  
 **Student:** Ryan Garfinkel  
 **Issue:** [https://github.com/documentdb/functional-tests/issues/537](https://github.com/documentdb/functional-tests/issues/537)  
-**Status:** Phase I Complete
+**Status:** Phase III In Progress
 
 ---
 
