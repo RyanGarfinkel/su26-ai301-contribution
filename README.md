@@ -174,7 +174,7 @@
 **Contribution Number:** 2  
 **Student:** Ryan Garfinkel  
 **Issue:** [https://github.com/documentdb/functional-tests/issues/537](https://github.com/documentdb/functional-tests/issues/537)  
-**Status:** Phase III In Progress
+**Status:** Phase IV Complete
 
 ---
 
@@ -299,9 +299,9 @@ This week, I committed code that implements the second pass test cases for the e
 
 ## Pull Request
 
-**PR Link:** 
+**PR Link:** [PR Link](https://github.com/documentdb/functional-tests/pull/695)
 
-**PR Description:** 
+**PR Description:** This PR required me to add additional test coverage to the encryption feature. Initially, this operator only had one smoke test, which tested basic functionality, not including null/missing input, invalid types, CRUD operations, and incorrecr and nested types. A new fixture was created to support the additional tests.
 
 **Maintainer Feedback:**
 - [Date]: [Summary of feedback received]
@@ -315,7 +315,7 @@ This week, I committed code that implements the second pass test cases for the e
 
 ### Technical Skills Gained
 
-[What you learned technically]
+I learned more about Pytest's shared fixtures this issue, as I needed to make a new one for the encryrption tests. In the previous issue, I used an existing one. I also learned more about the encryption feature and the bsonType.
 
 ### Challenges Overcome
 
@@ -324,7 +324,7 @@ This week, I committed code that implements the second pass test cases for the e
 
 ### What I'd Do Differently Next Time
 
-[Reflection on your process]
+Wriring the tests were easier this time since I had experience with the repository. However, I still had issues testing it locally. Getting MongoDB and Docker connected took extra time to get working, but I was able to get eventually with help from asking Claude Code and verifying the output with documentation I Googled.
 
 ---
 
