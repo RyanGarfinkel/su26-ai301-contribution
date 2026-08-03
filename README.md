@@ -174,7 +174,7 @@ Writing the tests was initially difficult becuase I didn't understand the reposi
 ----------------------------------------------------------------------------------------------------------------
 
 <details>
-<summary> Issue 2: Encryption Feature Notes (last changed: 07/19, status: still awaiting code review)</summary>
+<summary> Issue 2: Encryption Feature Notes (last changed: 08/02, status: still awaiting code review)</summary>
 
 # Contribution 2: Add compatibility test for encryption (second pass)
 
@@ -236,33 +236,34 @@ I initally needed to setup an environment to install all required packages. I cr
 
 ### Analysis
 
-The exitsting repository doesn't do a full evaluation of the encryption feature for documentdb. There is only one basic test, which does pass. There isn't an known issue with its functionality, but it needs more tests to pick up possible regressions as changes are made in the future.
+The existing repository doesn't do a full evaluation of the encryption feature for documentdb. There is only one basic test, which does pass, located in the `documentdb_tests/compatibility/tests/system/security/encryption/` directory. There isn't an known issue with the feature's functionality, but it needs more tests to pick up possible regressions as changes are made in the future. The encryption feature is already implemented in a [separate repository](https://github.com/documentdb/documentdb) managed by the maintainers.
 
 ### Proposed Solution
 
-I need to add more test coverage to the encryption feature that interaction with encryption fields, queries, and crud (create, read, update, delete) operations. I also need to add tests that cover edge cases like duplicate data.
+I need to expand test coverage to the encryption feature that interaction with encryption fields, queries, and crud (create, read, update, delete) operations. I also need to add tests that cover edge cases like duplicate data. These tests will go in the `documentdb_tests/compatibility/tests/system/security/encryption/` directory. With the addition of these new tests, I anticipate I will need to create a shared fixture with mock data to avoid code duplication.
 
 ### Implementation Plan
 
 Using UMPIRE framework (adapted):
 
-**Understand:** The encyrption feature currently has one test that covers basic funcationity. It needs additional tests to cover more complex functionality and possible errors like duplicate data and compatiability with encrypted queries and fields.
+**Understand:** The encryption feature currently has one test that covers basic functionality. It needs additional tests to cover more complex functionality and possible errors like duplicate data and compatibility with encrypted queries and fields.
 
-**Match:** The collections feature has similar tests to the encrytption feature. I am modeling my chnages based on the layout from that feature's testing suite.
+**Match:** The collections feature has similar tests to the encryption feature. I am modeling my changes based on the layout from that feature's testing suite.
 
 **Plan:** [Step-by-step implementation plan]
-1. Create a encryption base class in the utils folder.
-2. Create tests for duplicate values.
-3. Create tests for crud operations.
-4. Create tests that interact with encrypted fields and queries.
+1. Create shared fixture for new tests in encryption utils, `qe_collections.py`.
+2. Create a encryption base class in the utils folder.
+3. Create tests for duplicate values.
+4. Create tests for crud operations in `test_encryption_crud.py`.
+5. Create tests that interact with encrypted fields and queries.
 
 **Implement:** [Link to the branch on my fork](https://github.com/RyanGarfinkel/functional-tests/tree/add-encryption-compatibility-tests)
 
 **Review:** 
 - [ ] All tests have docstrings to convey their purpose.
 - [ ] Any constants are imported from test_constants.py.
-- [ ] Each test makes only one assertion.
-- [ ] Any shared dataclasses live in `utils/` directory.
+- [ ] Each test makes only one assertion (following `contributing.md` rules).
+- [ ] Any shared dataclasses live in the `utils/` directory.
 - [ ] Any new filenames follow the test_encryption_{feature}.py name style.
 
 **Evaluate:** In addition to there being a complete suite of tests that pass, the additional compatability tests can run on a live MongoDB database.
@@ -293,6 +294,10 @@ When setting up my environment with MonogDB through Docker, I had to manually te
 
 This week, I committed code that implements the second pass test cases for the encryption feature. I covered CRUD operations, edge cases, and the query call. I had to create a new pytest fixture that each of these tests share. I committed these changes, but still need to review these changes to ensure cose style meets contributing requirements. When tested, each added test passes. After review, I'll be able to open the PR.
 
+### Week 2 Progress
+
+I still have not heard back from the maintainers of the repository, but to keep the branch ready, I merged the latest changes from main into it so it is up to date.
+
 ### Code Changes
 
 - **Files modified:** `encryption/conftest`, `encryption/test_encryption_crud.py`, `encryption/test_encryption_edge_cases.py`, `encryption/test_encryption_query.py`, `encryption/utils/qe_collections.py`.
@@ -308,11 +313,10 @@ This week, I committed code that implements the second pass test cases for the e
 
 **PR Link:** [PR Link](https://github.com/documentdb/functional-tests/pull/695)
 
-**PR Description:** This PR required me to add additional test coverage to the encryption feature. Initially, this operator only had one smoke test, which tested basic functionality, not including null/missing input, invalid types, CRUD operations, and incorrecr and nested types. A new fixture was created to support the additional tests.
+**PR Description:** This PR required me to add additional test coverage to the encryption feature. Initially, this operator only had one smoke test, which tested basic functionality, not including null/missing input, invalid types, CRUD operations, and incorrect and nested types. A new fixture was created to support the additional tests.
 
 **Maintainer Feedback:**
-- [Date]: [Summary of feedback received]
-- [Date]: [How you addressed it]
+- 08/02/2026: As of now, I have not received maintainer feedback. When initially opening the PR, I needed to redo my commit because of a missing signature on the commit, which has been resolved.
 
 **Status:** Awaiting review
 
