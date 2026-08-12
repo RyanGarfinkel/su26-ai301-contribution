@@ -1,5 +1,5 @@
 <details>
-<summary>Issue 1: $tsIncrement Operator Notes (last changed: 07/26, status: still awaiting code review)</summary>
+<summary>Issue 1: $tsIncrement Operator Notes (last changed: 08/11, status: still awaiting code review)</summary>
     
 # Contribution 1: Add compatibility test for $tsIncrement (second pass)
 
@@ -178,7 +178,7 @@ Writing the tests was initially difficult becuase I didn't understand the reposi
 ----------------------------------------------------------------------------------------------------------------
 
 <details>
-<summary> Issue 2: Encryption Feature Notes (last changed: 08/02, status: still awaiting code review)</summary>
+<summary> Issue 2: Encryption Feature Notes (last changed: 08/11, status: still awaiting code review)</summary>
 
 # Contribution 2: Add compatibility test for encryption (second pass)
 
