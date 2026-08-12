@@ -132,6 +132,10 @@ This week, I created the PR to merge my working branch into the main repository'
 
 I returned to the issue and noticed there was feedback from a Copilot review that suggested I add an aggregate flag to the pytest file. I added the marker, then committed the change. I also went through the sections for this readme for issue 1 and updated it to refelct the testing changes I made, explain the issue more, and what I learned.
 
+### Week 3 Progress
+
+I this week I checked in on my PR and found that there was a merge conflict due to new changes. I went in and resolved the conflicts, there was a new test added to the increment test file I was working in. I also pulled latest changes from the main branch.
+
 ---
 
 ## Pull Request
@@ -306,6 +310,7 @@ I still have not heard back from the maintainers of the repository, but to keep 
 
 ### Week 2 Progress
 
+This week I just updated the latest changes from main to keep my branch up to date. I have still not heard back from the maintainers.
 
 ---
 
